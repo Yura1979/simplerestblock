@@ -14,7 +14,7 @@ func main() {
 	baseURL := "https://" + storage + "/ConfigurationManager/v1/objects/"
 	// urlEnd := "/ConfigurationManager/configuration/version"
 	urlEnd := "/storages"
-	url := baseURL + storage + urlEnd
+	url := baseURL + urlEnd
 	fmt.Println(url)
 
 	resp, err := http.Get(url)
