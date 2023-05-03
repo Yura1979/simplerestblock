@@ -43,5 +43,4 @@ func getStorageInfo(url string, user string, password string) {
 		log.Fatal(readErr)
 	}
 	fmt.Println(string(body))
-	defer req.Body.Close()
 }
