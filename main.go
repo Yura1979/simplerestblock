@@ -2,7 +2,6 @@ package main
 
 import (
 	"crypto/tls"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -28,7 +27,4 @@ func main() {
 		log.Fatal(readErr)
 	}
 	fmt.Println(string(body))
-	var data string
-	json.Unmarshal(body, &data)
-	fmt.Println(data)
 }
