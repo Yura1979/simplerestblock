@@ -12,7 +12,8 @@ func main() {
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	storage := "172.21.81.1"
 	urlStart := "https://"
-	urlEnd := "/ConfigurationManager/configuration/version"
+	// urlEnd := "/ConfigurationManager/configuration/version"
+	urlEnd := "/ConfigurationManager/configuration/v1/objects/storages"
 	url := urlStart + storage + urlEnd
 
 	resp, err := http.Get(url)
