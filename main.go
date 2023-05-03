@@ -6,12 +6,20 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"github.com/Yura1979/simplerestblock/utils"
 )
 
 func main() {
+	storageSN, err := utils.GetInput("Enter storage serial number: ")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("Storage serial number is:", storageSN)
+
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
-	storage := "172.21.81.1"
-	baseURL := "https://" + storage + "/ConfigurationManager/v1/objects/"
+	storageIP := "172.21.81.1"
+	baseURL := "https://" + storageIP + "/ConfigurationManager/v1/objects/"
 	// urlEnd := "/ConfigurationManager/configuration/version"
 	// urlEnd := "storages/instance"
 	urlEnd := "storage-summaries/instance"
