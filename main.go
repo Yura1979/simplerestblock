@@ -15,9 +15,19 @@ func main() {
 	// urlEnd := "/ConfigurationManager/configuration/version"
 	urlEnd := "storages/instance"
 	url := baseURL + urlEnd
+	user := "maintenance"
+	password := "raid-maintenance"
 	fmt.Println(url)
 
-	resp, err := http.Get(url)
+	client := http.Client{}
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	req.SetBasicAuth(user, password)
+
+	resp, err := client.Do(req)
+	// resp, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
 	}
