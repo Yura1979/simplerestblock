@@ -13,7 +13,7 @@ func main() {
 	storage := "172.21.81.1"
 	baseURL := "https://" + storage + "/ConfigurationManager/v1/objects/"
 	// urlEnd := "/ConfigurationManager/configuration/version"
-	urlEnd := "storages"
+	urlEnd := "storages/instance"
 	url := baseURL + urlEnd
 	fmt.Println(url)
 
