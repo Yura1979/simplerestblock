@@ -42,5 +42,6 @@ func getStorageInfo(url string, user string, password string) {
 	if readErr != nil {
 		log.Fatal(readErr)
 	}
+	defer resp.Body.Close()
 	fmt.Println(string(body))
 }
