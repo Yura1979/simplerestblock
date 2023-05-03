@@ -37,5 +37,6 @@ func main() {
 	if readErr != nil {
 		log.Fatal(readErr)
 	}
+	defer req.Body.Close()
 	fmt.Println(string(body))
 }
