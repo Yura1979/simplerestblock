@@ -20,6 +20,11 @@ func main() {
 	password := "raid-maintenance"
 	fmt.Println(url)
 
+	// resp, err := http.Get(url)
+	getStorageInfo(url, user, password)
+}
+
+func getStorageInfo(url string, user string, password string) {
 	client := http.Client{}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -28,7 +33,7 @@ func main() {
 	req.SetBasicAuth(user, password)
 
 	resp, err := client.Do(req)
-	// resp, err := http.Get(url)
+
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -37,6 +42,6 @@ func main() {
 	if readErr != nil {
 		log.Fatal(readErr)
 	}
-	defer req.Body.Close()
 	fmt.Println(string(body))
+	defer req.Body.Close()
 }
