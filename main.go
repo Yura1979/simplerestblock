@@ -12,10 +12,10 @@ import (
 func main() {
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	storage := "172.21.81.1"
-	urlStart := "https://"
+	baseURL := "https://" + storage + "/ConfigurationManager/v1/objects/"
 	// urlEnd := "/ConfigurationManager/configuration/version"
-	urlEnd := "/ConfigurationManager/v1/objects/storages"
-	url := urlStart + storage + urlEnd
+	urlEnd := "/storages"
+	url := baseURL + storage + urlEnd
 	fmt.Println(url)
 
 	resp, err := http.Get(url)
