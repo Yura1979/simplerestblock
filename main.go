@@ -13,7 +13,8 @@ func main() {
 	storage := "172.21.81.1"
 	baseURL := "https://" + storage + "/ConfigurationManager/v1/objects/"
 	// urlEnd := "/ConfigurationManager/configuration/version"
-	urlEnd := "storages/instance"
+	// urlEnd := "storages/instance"
+	urlEnd := "storage-summaries/instance"
 	url := baseURL + urlEnd
 	user := "maintenance"
 	password := "raid-maintenance"
