@@ -15,6 +15,7 @@ func main() {
 	// urlEnd := "/ConfigurationManager/configuration/version"
 	urlEnd := "/ConfigurationManager/configuration/v1/objects/storages"
 	url := urlStart + storage + urlEnd
+	fmt.Println(url)
 
 	resp, err := http.Get(url)
 	if err != nil {
