@@ -28,7 +28,7 @@ func main() {
 	password := "raid-maintenance"
 	fmt.Println(url)
 
-	checkStorage("https://"+storageIP+"/ConfigurationManager/v1/objects/storages/instance", storageIP)
+	checkStorage("https://"+storageIP+"/ConfigurationManager/v1/objects/storages", storageIP)
 
 	// resp, err := http.Get(url)
 	getStorageInfo(url, user, password)
