@@ -28,8 +28,23 @@ func main() {
 	password := "raid-maintenance"
 	fmt.Println(url)
 
+	checkStorage(baseURL+"storages/instance", storageIP)
+
 	// resp, err := http.Get(url)
 	getStorageInfo(url, user, password)
+}
+
+func checkStorage(url, ip string) bool {
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Fatal(err)
+	}
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(string(body))
+	return true
 }
 
 func getStorageInfo(url string, user string, password string) {
